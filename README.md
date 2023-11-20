@@ -2,6 +2,8 @@
 
 This Extension provides the ability to add a table that functions as a calendar. Only English is supported atm. This was built to help plan events by adding a calendar to your Note. 
 
+<img width="1131" alt="image" src="https://github.com/hugosalinas/craft-inline-calendar/assets/21370439/36288e8f-2153-48aa-b573-c996e7ae3023">
+
 
 ## Building
 
