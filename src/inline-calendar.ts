@@ -1,6 +1,5 @@
 import { BlockLocation, CraftBlock, CraftBlockUpdate, CraftTableBlockInsert, CraftTableCellInsert, CraftTableColumn, CraftTableRowInsert, CraftTextBlock, IndexLocation } from "@craftdocs/craft-extension-api";
 import { showConsole, hideConsole, clearConsole, logInPageConsoleMessage } from './console'
-import Datepicker from '../node_modules/vanillajs-datepicker/js/Datepicker.js';
 import flatpickr from "flatpickr";
 
 const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
