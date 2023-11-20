@@ -6,12 +6,10 @@ const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 const monthName = ["Jan", "Feb", "March", "April", "May", "June", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 export const initInlineCalendar = (): void => {
-
-    document.getElementById("start-date").onmouseover = async (event: Event) => {
-        event.preventDefault();
-        event.stopPropagation();
-    }
-
+    /**
+     * Necessary Due to default input [type=date] bug
+     * BUG: Datepicker window closes onmouseout of input
+     */
     flatpickr("#start-date", {
         dateFormat: "d M, Y",
     });
