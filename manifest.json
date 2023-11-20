@@ -1,0 +1,10 @@
+{
+  "name": "Inline Calendar",
+  "fileName": "craftx-inline-calendar",
+  "author": "Craft Docs",
+  "authorEmail": "team@craft.do",
+  "description": "Example showcasing the capabilities of Craft eXtensions.",
+  "id": "com.craft.x.inline-calendar",
+  "api": "0.0.4",
+  "main": "index.html"
+}
