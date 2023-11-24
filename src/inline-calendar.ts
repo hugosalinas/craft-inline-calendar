@@ -1,9 +1,10 @@
-import { BlockLocation, CraftBlock, CraftBlockUpdate, CraftTableBlockInsert, CraftTableCellInsert, CraftTableColumn, CraftTableRowInsert, CraftTextBlock, IndexLocation } from "@craftdocs/craft-extension-api";
+import { BlockLocation, CraftBlock, CraftBlockUpdate, CraftTableBlockInsert, CraftTableCellFillColor, CraftTableCellInsert, CraftTableColumn, CraftTableRowInsert, CraftTextBlock, IndexLocation } from "@craftdocs/craft-extension-api";
 import { showConsole, hideConsole, clearConsole, logInPageConsoleMessage } from './console'
 import flatpickr from "flatpickr";
 
 const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthName = ["Jan", "Feb", "March", "April", "May", "June", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let activeFillColor: CraftTableCellFillColor = 'blueFill';
 
 export const initInlineCalendar = (): void => {
     /**
@@ -21,6 +22,8 @@ export const initInlineCalendar = (): void => {
     document.getElementById("create-table").onclick = async () => {
         const startDateElement = document.getElementById("start-date") as HTMLInputElement;
         const endDateElement = document.getElementById("end-date") as HTMLInputElement;
+        const activeFillElement = document.getElementById("active-color") as HTMLSelectElement;
+        activeFillColor = activeFillElement.value as CraftTableCellFillColor ?? activeFillColor;
         if (startDateElement.value && endDateElement.value) {
             const data = buildCalendarArray(new Date(startDateElement.value), new Date(endDateElement.value))
             insertTable(data);
@@ -79,7 +82,7 @@ function insertTable(tableData: Array<CalendarTableCell>[]): void {
 }
 
 function cellBuilder(cell: CalendarTableCell): CraftTableCellInsert {
-    return { block: { type: 'textBlock', content: cell.content }, style: { fillColor: cell.isActive ? 'blueFill' : undefined, defaultBlockStyle: { isBold: cell.isActive, isCode: cell.isActive } } }
+    return { block: { type: 'textBlock', content: cell.content }, style: { fillColor: cell.isActive ? activeFillColor : undefined, defaultBlockStyle: { isBold: cell.isActive, isCode: cell.isActive } } }
 }
 
 function compaireDates(date1: Date, date2: Date): boolean {

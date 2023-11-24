@@ -29,12 +29,11 @@
       <!-- START MAIN MENU -->
       <div id="mainMenu" class="mx-2 mt-2 mb-4">
 
-        <!---- DATE INPUTS ---->
         <section id="dataApiDetails" class="px-2 pt-2 pb-4">
+          <!---- DATE INPUTS ---->
           <div class="gridItem cursor-pointer gap-1 grid">
             <div class="flex justify-between">
               <label for="start-date">Start Date</label>
-              <!-- <div id="start-date" data-date="01/25/2020"></div> -->
               <input type="date" class="date-input" id="start-date" placeholder="Pick Date.." />
             </div>
             <div class="flex justify-between">
@@ -43,6 +42,22 @@
             </div>
           </div>
 
+          <!-- COLOR INPUTS -->
+          <div class="gridItem cursor-pointer gap-1 grid">
+            <div class="flex justify-between">
+              <label for="start-date">Color</label>
+              <select type="date" value="blueFill" class="date-input" id="active-color" placeholder="Pick Date..">
+                <option value="blueFill">Blue</option>
+                <option value="redFill">Red</option>
+                <option value="pinkFill1">Pink</option>
+                <option value="greenFill">Green</option>
+                <option value="greyFill4">Grey</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- CREATE TABLE-->
           <div id="create-table" class="gridItem cursor-pointer">
             <div class="h-full flex flex-row">
               <h3 class="flex flex-grow text-sm font-medium">
